@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Snake</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="spinner"></div>
+</div>
+
+<div class="game-container">
+<h1>Snake</h1>
+
+<button onclick="openModal()" class="btn">How To Play</button>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>How To Play</h3>
+    <p>
+      Use Arrow Keys or Swipe.<br>
+      Eat food to grow.<br>
+      Speed increases 5% every food.
+    </p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<canvas id="game" width="400" height="400"></canvas>
+<a href="../index.html" class="back">← Back to Home</a>
+</div>
+
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+  }, 800);
+});
+function openModal(){ document.getElementById("modal").style.display="flex"; }
+function closeModal(){ document.getElementById("modal").style.display="none"; }
+</script>
+
+<script src="js/snake.js"></script>
+</body>
+</html>

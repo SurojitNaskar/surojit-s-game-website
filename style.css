@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  font-size: 28px;
+  color: #22d3ee;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(30,41,59,0.8);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 20px #6366f1;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: #6366f1;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #22d3ee;
+  transform: scale(1.05);
+}
+
+canvas {
+  background: #000;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.game-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 15px;
+  color: #22d3ee;
+  text-decoration: none;
+}
+
+/* Loading screen */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #1e293b;
+  border-top: 6px solid #22d3ee;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+}
+
+.modal button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #6366f1;
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
