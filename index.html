@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +9,39 @@
 <body>
 
 <header>
-  <h1>🎮 GameHub</h1>
+  <h1>🎮 Welcome to Surojit's GameHub</h1>
 </header>
 
+<!-- User Controls -->
+<div style="text-align:center; margin-bottom:20px;">
+  <button onclick="logout()" class="btn">Logout</button>
+  <a href="leaderboard.html" class="btn">Leaderboard</a>
+</div>
+
 <main class="game-grid">
+
   <div class="card">
     <h2>Snake</h2>
-    <p>Classic snake game with speed increase.</p>
+    <p>(Sap khala 🐍)</p>
+    <p>Classic snake game. Eat and grow.</p>
     <a href="snake.html" class="btn">Play</a>
   </div>
 
   <div class="card">
     <h2>Flappy Bird</h2>
-    <p>Tap and fly. Speed increases gradually.</p>
+    <p>Fly and avoid pipes.</p>
     <a href="flappy.html" class="btn">Play</a>
   </div>
 
   <div class="card">
     <h2>Brick Breaker</h2>
-    <p>4 Level progressive difficulty.</p>
+    <p>Destroy all bricks.</p>
     <a href="brick.html" class="btn">Play</a>
   </div>
+
 </main>
 
 <script src="main.js"></script>
+
 </body>
 </html>
