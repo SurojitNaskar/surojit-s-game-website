@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard - GameHub</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="game-container">
+  <h1>🏆 Leaderboard</h1>
+
+  <div id="leaderboard"></div>
+
+  <a href="index.html" class="back">← Back</a>
+</div>
+
+<script>
+const currentUser = localStorage.getItem("currentUser");
+if (!currentUser) {
+  window.location.href = "login.html";
+}
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+if (users.length === 0) {
+  document.getElementById("leaderboard").innerHTML =
+    "<p>No players registered yet.</p>";
+} else {
+
+  let html = "";
+
+  // Sort by total score
+  users.sort((a, b) =>
+    (b.scores.snake + b.scores.flappy + b.scores.brick) -
+    (a.scores.snake + a.scores.flappy + a.scores.brick)
+  );
+
+  users.forEach((user, index) => {
+    const total =
+      user.scores.snake +
+      user.scores.flappy +
+      user.scores.brick;
+
+    html += `
+      <div class="card">
+        <h3>${index + 1}. ${user.username}</h3>
+        <p>🐍 Snake: ${user.scores.snake}</p>
+        <p>🐦 Flappy: ${user.scores.flappy}</p>
+        <p>🧱 Brick: ${user.scores.brick}</p>
+        <p><strong>Total: ${total}</strong></p>
+      </div>
+    `;
+  });
+
+  document.getElementById("leaderboard").innerHTML = html;
+}
+</script>
+
+</body>
+</html>
